@@ -1,0 +1,36 @@
+<h1>Return page</h1>
+order id:<input type="text"[(ngModel)]="id" placeholder="Enter order ID"/><br/><br/><br/>
+Car id:<input type="text"[(ngModel)]="carId" placeholder="Enter Car ID"/><br/><br/><br/>
+Return Date:<input type="text"[(ngModel)]="Date" placeholder="Enter return Date"/><br/><br/><br/>
+Car Available:<select name="Available"  [(ngModel)]="available">
+    <option selected="available == yes" value="Yes">Yes</option>
+    <option selected="available == no" value="No">No</option>
+    </select>
+<br/><br/>
+ 
+
+        <button (click)="returnCar(available,id,Date,carId)">Sumbit</button>
+        
+        <div>
+            <table>
+                <tr>
+                    sum {{CarsArray1[0]}}
+                </tr>
+            </table>
+        </div>
+        <button (click)="getAllOrders()">Get all orders</button>
+
+        <div>
+    
+            <ul *ngIf="OrdersArray">
+                <li style=" border: 3px solid black; width: 30%" *ngFor="let i of OrdersArray" >
+                  
+                    <span>Order id: {{i.id}}.</span><br/>
+                    <span > User Id: {{i.userId}}.</span><br/>
+                    <span > Car Id: {{i.carId}}.</span><br/>
+                    <span > Pick Up Date: {{i.pickUpDate}}. </span><br/>
+                    <span > Drop Off Date: {{i.dropOffDate}}. </span><br/>
+                    <span > Real Drop Off Date: {{i.realDropOffDate}}. </span><br/>
+                </li>
+            </ul>
+                 </div>

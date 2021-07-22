@@ -1,0 +1,21 @@
+<div class="bgBlack">
+	<span><img src="./assets/newBanner.jpg" /></span>
+	<a class="xx" [routerLink]="['home']">Home Page</a>
+	<a class="xx" [routerLink]="['orders']">Orders</a>
+	<a class="xx" *ngIf="adminRole||employeeRole" [routerLink]="['return']">Car returnal</a>
+	<a class="xx" *ngIf="adminRole" [routerLink]="['manager']">Manager</a>
+	&nbsp;&nbsp;&nbsp;
+	<span *ngIf="userConnected">
+		<a class="tt">Username:</a>
+		<input type="text" [(ngModel)]="username" />
+		&nbsp;&nbsp;&nbsp;
+		<a class="tt"> Password:</a>
+		<input type="text" [(ngModel)]="password" />&nbsp;
+		<button class="xxx" (click)="Login(username,password)">Login</button>
+		<a style="color: white;" [routerLink]="['register']">Not a user?</a>&nbsp;&nbsp;&nbsp;
+	</span>
+	<button class="xxx" (click)="logout()" *ngIf="logoutBool">Logout</button>&nbsp;&nbsp;
+	<br />
+	<hr>
+</div>
+<router-outlet></router-outlet>

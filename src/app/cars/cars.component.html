@@ -1,0 +1,74 @@
+<h1>Our car collection</h1>
+
+
+<br/><br/>
+<div class="center">
+  <span >days amount:<input type="text"[(ngModel)]="n1" placeholder="Enter rental days"/></span>&nbsp;&nbsp;&nbsp; Total price:{{Price}}<br/><br/>
+  After inserting days amount ,Please click on your selected car to show total price <br/>
+<input type="date" [(ngModel)]="sDate" >
+<input type="date" [(ngModel)]="eDate"> 
+</div>
+<div class="center">
+  
+  <div class="row" *ngIf ="carsArray1">
+    <ul class="row" *ngIf ="carsArray1">
+      <div class="column">
+        <li class="customers" *ngFor="let car of carsArray1" (click)="getPrice(car.pricePerDay,n1)">
+          <img src="./assets/{{car.id}}.jpg"/><br/>
+          <span>  Car id: {{car.id}}.</span><br/>
+          <span > manufacture: {{car.manufacture}}.</span><br/>
+          <span > Model: {{car.model}}.</span><br/>
+          <span > Available?: {{car.available}}. </span><br/>
+          <span > Price per day {{car.pricePerDay}}. </span><br/>
+          <span > last cost per day {{car.lateCost}}. </span><br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button class="xx" (click)="PlaceOrder(car.id,sDate,eDate)">order</button><br/>
+        </li>
+      </div>
+    </ul>
+  </div>
+  <div class="row" *ngIf ="carsArray2">
+    <ul>
+      <div class="column">
+        <li class="customers" *ngFor="let car of carsArray2" (click)="getPrice(car.pricePerDay,n1)">
+          <img src="./assets/{{car.id}}.jpg"/><br/>
+          <span>  Car id: {{car.id}}.</span><br/>
+          <span > manufacture: {{car.manufacture}}.</span><br/>
+          <span > Model: {{car.model}}.</span><br/>
+          <span > Available?: {{car.available}}. </span><br/>
+          <span > Price per day {{car.pricePerDay}}. </span><br/>
+          <span > last cost per day {{car.lateCost}}. </span><br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button class="xx" (click)="PlaceOrder(car.id,sDate,eDate)">order</button><br/>
+        </li>
+      </div>
+      </ul>
+    </div>
+    
+    
+  </div>
+
+  <br/> <br/> <br/>
+  <div class="center">
+    
+    <select class="dropbtn" *ngIf="CarsArray"   name="searchByModel"  [(ngModel)]="searchByModel">
+      <option  *ngFor="let model of CarsArray" selected="searchByModel == {{model.model}}" value="{{model.model}}">{{model.model}}</option>
+      
+    </select>
+    <button class="xx" (click)="SearchByModel(searchByModel)">search By Model</button>
+    <br/>
+  </div>
+  <div >
+    <div class="center" *ngIf="id" (click)="getPrice(PricePerDay,n1)">
+      <input type="date" [(ngModel)]="sDate" >
+      <input type="date" [(ngModel)]="eDate"><br/>
+      <img  src="./assets/{{id}}.jpg"/><br/>
+      <span>Car id: {{id}}.</span><br/>
+      <span > manufacture: {{manufacture}}</span><br/>
+      <span >Model: {{model}}.</span><br/>
+      <span > Available?: {{Available}} </span><br/>
+      <span > Price per day {{PricePerDay}} </span><br/>
+      <span > last cost per day {{lateCostPerDay}} </span><br/>
+      <button class="xx" (click)="PlaceOrder(id,sDate,eDate)">order</button>
+    </div>
+    
+  </div>
+  

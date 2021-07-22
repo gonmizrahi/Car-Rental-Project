@@ -1,0 +1,57 @@
+.tt{
+    font-size: 2.5em;
+    color: white;
+}
+img{
+    width:150px; height: 50px;
+    padding: 10px 15px;
+    margin-left: 10px;
+}
+.xx {
+    background-color:black; 
+    border: none;
+    color: white;
+    padding: 20px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+  }
+  .xx:hover {
+    background-color:white; /* Green */
+    color:black;
+  }
+
+  .bgBlack{
+      background-color:rgb(10, 10, 10);
+  }
+
+  .xxx {
+    background-color:darkblue; 
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+  }
+  .xxx:hover {
+    background-color:white; /* Green */
+    color:black;
+  }
+  * {box-sizing: border-box}
+
+  .tt {
+    background-color:black; 
+    border: none;
+    color: white;
+    padding: 20px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+  }
